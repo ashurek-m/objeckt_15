@@ -42,10 +42,10 @@ with webdriver.Chrome() as browser:
     browser.find_element(by='xpath', value=buttom_dop).click()
     small_link = "/html/body/div/div[3]/p[2]/a"
     browser.find_element(by='xpath', value=small_link).click()
-    login_xpath = "/html/body/div/div/div/div/form/div[3]/div/div/div/input"
-    password_path = "/html/body/div/div/div/div/form/div[4]/div/div/div/span/input"
-    buttom = "/html/body/div/div/div/div/form/button"
-    browser.find_element(by=By.ID, value='login').send_keys('Ошурек М.П.')
+    chek_order = '/html/body/div/div/div/div/form/button'
+    time.sleep(2)
+    browser.find_element(By.ID, "login").send_keys('Ошурек М.П.')
     browser.find_element(by=By.ID, value='password').send_keys(1900)
-    #browser.find_element(by='xpath', value=buttom).click()
+    browser.find_element(by='xpath', value=chek_order).click()
+
     time.sleep(2)
