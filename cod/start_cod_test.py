@@ -43,9 +43,23 @@ with webdriver.Chrome() as browser:
     small_link = "/html/body/div/div[3]/p[2]/a"
     browser.find_element(by='xpath', value=small_link).click()
     chek_order = '/html/body/div/div/div/div/form/button'
-    time.sleep(2)
+    time.sleep(5)
     browser.find_element(By.ID, "login").send_keys('Ошурек М.П.')
     browser.find_element(by=By.ID, value='password').send_keys(1900)
     browser.find_element(by='xpath', value=chek_order).click()
-
     time.sleep(2)
+    control_proizv = '/html/body/div/div/section/aside/div/div[2]/div[1]/div/div[1]/div[2]/div/ul/li[5]/div'
+    browser.find_element(by='xpath', value=control_proizv).click()
+    time.sleep(1)
+    zakaz = '/html/body/div/div/section/aside/div/div[2]/div[1]/div/div[1]/div[2]/div/ul/li[5]/ul/li[2]'
+    browser.find_element(by='xpath', value=zakaz).click()
+    time.sleep(2)
+    dobavit_new_zakaz = '/html/body/div/div/section/section/main/div/div[1]/div/div/div/div/div[1]/div'
+    browser.find_element(by='xpath', value=dobavit_new_zakaz).click()
+    time.sleep(2)
+    browser.find_element(by=By.ID, value='OrderNum').send_keys(9999)
+    browser.find_element(by=By.ID, value='Name').send_keys('Maksim')
+    nazad = '/html/body/div/div/section/section/main/div/div/div[1]/div/div/div/div/div[1]/div/span'
+    browser.find_element(by='xpath', value=nazad).click()
+    time.sleep(2)
+
