@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
 import time
 
 url = "https://zyfra:8001"
@@ -59,6 +60,9 @@ with webdriver.Chrome() as browser:
     time.sleep(2)
     browser.find_element(by=By.ID, value='OrderNum').send_keys(9999)
     browser.find_element(by=By.ID, value='Name').send_keys('Maksim')
+    browser.find_element(by=By.ID, value='Priority').click()
+    time.sleep(1)
+    prior = browser.find_elements(by=By.CLASS_NAME, value='ant-select-item ant-select-item-option')
     nazad = '/html/body/div/div/section/section/main/div/div/div[1]/div/div/div/div/div[1]/div/span'
     browser.find_element(by='xpath', value=nazad).click()
     time.sleep(2)
