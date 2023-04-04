@@ -2,3 +2,4 @@ selenium==4.8.2
 pathlib==1.0.1
 sqlalchemy==1.4.35
 pyodbc==4.0.35
+pymssql==2.2.7
