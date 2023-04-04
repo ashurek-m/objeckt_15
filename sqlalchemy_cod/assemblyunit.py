@@ -18,3 +18,11 @@ class AssemblyUnit(Base):
     RowAddUser = Column(Text)
     RowUpdateDate = Column(DateTime)
     RowUpdateUser = Column(Text)
+
+
+if __name__ in '__main__':
+    session = SessionLocal()
+    query = session.query(AssemblyUnit.Name)\
+        .limit(10)\
+        .all()
+    print(query)
