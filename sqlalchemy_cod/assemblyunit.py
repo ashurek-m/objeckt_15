@@ -12,12 +12,12 @@ class AssemblyUnit(Base):
     AssemblyUnitGroupId = Column(Integer)  # поле с ид папки в котором находиться ДСЕ
     IsDeleted = Column(Integer)  # поле с меткой о том удалена ДСЕ или нет (1 значит удалена)
     IntegrationId = Column(Text)  # какое-то поле для интеграции
-    AttachedFilePathList = Column(Text)  #
-    DefaultSpecificationId = Column(Integer)
-    RowAddDate = Column(DateTime)
-    RowAddUser = Column(Text)
-    RowUpdateDate = Column(DateTime)
-    RowUpdateUser = Column(Text)
+    AttachedFilePathList = Column(Text)  # зранятся ссылки на документы
+    DefaultSpecificationId = Column(Integer)  # номер спецификации по умолчанию
+    RowAddDate = Column(DateTime)  # дата добавления ДСЕ
+    RowAddUser = Column(Text)  # юзер кто содал ДСЕ
+    RowUpdateDate = Column(DateTime)  # дата обновления строки
+    RowUpdateUser = Column(Text)  # юзер произвевший обновление
 
 
 if __name__ in '__main__':
