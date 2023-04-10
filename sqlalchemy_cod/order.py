@@ -5,8 +5,8 @@ from sqlalchemy import Column, Integer, String, Text, DateTime
 class ProductionOrder(Base):
     __tablename__ = 'ProductionOrder'
     Id = Column(Integer, primary_key=True)
-    OrderNum = Column(String)
-    StatusTypeId = Column(Integer)
+    OrderNum = Column(String)  # number order
+    StatusTypeId = Column(Integer)  #
     DtOrder = Column(DateTime)
     Name = Column(Text)
     IntegrationId = Column(Text)
