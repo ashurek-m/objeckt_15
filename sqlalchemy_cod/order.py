@@ -1,5 +1,5 @@
-from database import Base, SessionLocal
-from sqlalchemy import Column, Integer, String, func, Text, DateTime
+from database import Base
+from sqlalchemy import Column, Integer, String, Text, DateTime
 
 
 class ProductionOrder(Base):
