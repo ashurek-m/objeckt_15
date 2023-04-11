@@ -1,4 +1,4 @@
-from database import Base
+from database import Base, SessionLocal
 from sqlalchemy import Column, Integer, String, Text, DateTime, Float
 
 
@@ -62,3 +62,15 @@ class WorkflowChart(Base):
     DtPlanStart = Column(DateTime)  # неизвестно
     Number = Column(Integer)  # неизвестно
     PartPlanCount = Column(Integer)  # неизвестно
+
+
+if __name__ in '__main__':
+    session = SessionLocal()
+    query = session.query(ProductionOrder.OrderNum) \
+        .limit(10) \
+        .all()
+    print(query)
+    query = session.query(WorkflowChart.Name)\
+        .limit(10)\
+        .all()
+    print(query)
