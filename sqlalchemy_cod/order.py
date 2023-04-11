@@ -34,10 +34,10 @@ class ProductionOrder(Base):
 class WorkflowChart(Base):
     __tablename__ = 'WorkflowChart'
     Id = Column(Integer, primary_key=True)
-    Name = Column(String)  # Наименование МЛ
+    Name = Column(String)  # Наименование МЛ обязательное поле
     Description = Column(Text)  # примечания
     WorkflowStatusId = Column(Integer)  # неизвестно (идентификатор состояния рабочего процесса)
-    AssemblyUnitSpecificationId = Column(Integer)  # Id спецификации по которой изготавиваем ДСЕ
+    AssemblyUnitSpecificationId = Column(Integer)  # Id спецификации по которой изготавиваем ДСЕ обязательное поле
     IntegrationId = Column(Text)  # что-то для интеграции
     ProductionOrderId = Column(Integer)  # Id заказа
     Series = Column(Text)  # неизвестно
@@ -47,10 +47,10 @@ class WorkflowChart(Base):
     DtForecastTo = Column(DateTime)  # прогнозная дата
     DtPlanFrom = Column(DateTime)  # планируемая дата начала изготовления
     DtPlanTo = Column(DateTime)  # планируемая дата завершения изготовления
-    Priority = Column(Integer)  # приоритет (низкий-3, нормальный-2, высокий-1, наивысший-0) обезательное поле
+    Priority = Column(Integer)  # приоритет (низкий-3, нормальный-2, высокий-1, наивысший-0) обязательное поле
     CurrentSatusId = Column(Integer)  # производственный статус
-    NumberStr = Column(Text)  # номер МЛ (item)
-    DecimalPartPlanCount = Column(Float)  # планируемое кол-во
+    NumberStr = Column(Text)  # номер МЛ (item) обязательное поле
+    DecimalPartPlanCount = Column(Float)  # планируемое кол-во обязательное поле
     ParentId = Column(Integer)  # неизвестно
     RowAddDate = Column(DateTime)  # дата создания строки в БД
     RowAddUser = Column(Text)  # кто создал
