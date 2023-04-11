@@ -1,5 +1,5 @@
 from database import Base
-from sqlalchemy import Column, Integer, String, Text, DateTime
+from sqlalchemy import Column, Integer, String, Text, DateTime, Float
 
 
 class ProductionOrder(Base):
@@ -29,3 +29,36 @@ class ProductionOrder(Base):
     DtFromPlan = Column(DateTime)  # неизвестно
     DtToFact = Column(DateTime)  # неизвестно
     DtToPlan = Column(DateTime)  # неизвестно
+
+
+class WorkflowChart(Base):
+    __tablename__ = 'WorkflowChart'
+    Id = Column(Integer, primary_key=True)
+    Name = Column(String)
+    Description = Column(Text)
+    WorkflowStatusId = Column(Integer)
+    AssemblyUnitSpecificationId = Column(Integer)
+    IntegrationId = Column(Text)
+    ProductionOrderId = Column(Integer)
+    Series = Column(Text)
+    DtFactFrom = Column(DateTime)
+    DtFactTo = Column(DateTime)
+    DtForecastFrom = Column(DateTime)
+    DtForecastTo = Column(DateTime)
+    DtPlanFrom = Column(DateTime)
+    DtPlanTo = Column(DateTime)
+    Priority = Column(Integer)
+    CurrentSatusId = Column(Integer)
+    NumberStr = Column(Text)
+    DecimalPartPlanCount = Column(Float)
+    ParentId = Column(Integer)
+    RowAddDate = Column(DateTime)
+    RowAddUser = Column(Text)
+    RowUpdateDate = Column(DateTime)
+    RowUpdateUser = Column(Text)
+    CurrentOperationId = Column(Integer)
+    DeptId = Column(Integer)
+    DtPlanEnd = Column(DateTime)
+    DtPlanStart = Column(DateTime)
+    Number = Column(Integer)
+    PartPlanCount = Column(Integer)
