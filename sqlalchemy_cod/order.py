@@ -1,3 +1,4 @@
+import datetime
 from database import Base, SessionLocal
 from sqlalchemy import Column, Integer, String, Text, DateTime, Float
 
@@ -66,11 +67,7 @@ class WorkflowChart(Base):
 
 if __name__ in '__main__':
     session = SessionLocal()
-    query = session.query(ProductionOrder.OrderNum) \
-        .limit(10) \
-        .all()
-    print(query)
-    query = session.query(WorkflowChart.Name)\
-        .limit(10)\
-        .all()
-    print(query)
+    q1 = session.query(ProductionOrder).get(198)
+    print(q1)
+    #q1.OrderNum = '1993'
+    #session.commit()
